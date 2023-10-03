@@ -3,10 +3,11 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProductPage from "./pages/ProductPage";
+import { ComputerStoreProvider } from "./contexts/ComputerStoreContext";
 
 function App() {
   return (
-    <>
+    <ComputerStoreProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -15,7 +16,7 @@ function App() {
         </Routes>
         <Footer />
       </Router>
-    </>
+    </ComputerStoreProvider>
   );
 }
 
