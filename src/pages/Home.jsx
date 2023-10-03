@@ -1,16 +1,13 @@
-import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import DropdownButton from "../components/DropdownButton";
-import Footer from "../components/Footer";
 
 function Home() {
   return (
     <>
-      <Navbar />
-      <div className="default-container mx-auto">
+      <div className="max-w-7xl mx-auto">
         <Slider />
         {/* Categories Section */}
-        <section className="p-4 md:p-10 flex items-center justify-between">
+        <section className="p-4 xl:py-10 xl:px-0 flex items-center justify-between">
           <div className="flex gap-4">
             <DropdownButton>Type</DropdownButton>
             <DropdownButton>Price</DropdownButton>
@@ -21,7 +18,7 @@ function Home() {
           </div>
         </section>
         {/* Main Product Grid Section */}
-        <section className="p-4 md:p-10">
+        <section className="p-4 xl:py-10 xl:px-0">
           <h1 className="text-4xl font-bold mb-10">This For You!</h1>
           <div className="grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-2 gap-4">
             <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
@@ -51,31 +48,31 @@ function Home() {
           </div>
         </section>
         {/* Top Categories Section */}
-        <section className="p-4 md:p-10">
+        <section className="p-4 xl:py-10 xl:px-0">
           <h1 className="text-4xl font-bold mb-10">Shop Our Top Categories</h1>
           <div className="grid grid-cols-2 grid-rows-3 md:grid-cols-6 md:grid-rows-1 gap-4">
-            <div className="w-full h-[200px] md:h-[300px] bg-[#D9D9D9] rounded-2xl">
+            <div className="w-full h-[250px] bg-[#D9D9D9] rounded-2xl">
               test
             </div>
-            <div className="w-full h-[200px] md:h-[300px] bg-[#D9D9D9] rounded-2xl">
+            <div className="w-full h-[250px] bg-[#D9D9D9] rounded-2xl">
               test
             </div>
-            <div className="w-full h-[200px] md:h-[300px] bg-[#D9D9D9] rounded-2xl">
+            <div className="w-full h-[250px] bg-[#D9D9D9] rounded-2xl">
               test
             </div>
-            <div className="w-full h-[200px] md:h-[300px] bg-[#D9D9D9] rounded-2xl">
+            <div className="w-full h-[250px] bg-[#D9D9D9] rounded-2xl">
               test
             </div>
-            <div className="w-full h-[200px] md:h-[300px] bg-[#D9D9D9] rounded-2xl">
+            <div className="w-full h-[250px] bg-[#D9D9D9] rounded-2xl">
               test
             </div>
-            <div className="w-full h-[200px] md:h-[300px] bg-[#D9D9D9] rounded-2xl">
+            <div className="w-full h-[250px] bg-[#D9D9D9] rounded-2xl">
               test
             </div>
           </div>
         </section>
         {/* By Brand Section */}
-        <section className="p-4 md:p-10">
+        <section className="p-4 xl:py-10 xl:px-0">
           <h1 className="text-4xl font-bold mb-10">Choose by Brand</h1>
           <div className="grid grid-cols-1 grid-rows-8 md:grid-cols-2 md:grid-rows-4 xl:grid-cols-4 xl:grid-rows-2 gap-4">
             <div className="w-full bg-[#D9D9D9] rounded-2xl p-4 flex items-center gap-4">
@@ -147,7 +144,7 @@ function Home() {
         {/* Second Slider */}
         <Slider />
         {/* Best Deals Section */}
-        <section className="p-4 md:p-10">
+        <section className="p-4 xl:py-10 xl:px-0">
           <h1 className="text-4xl font-bold mb-10">
             Today Best Deals For You!
           </h1>
@@ -167,7 +164,7 @@ function Home() {
           </div>
         </section>
         {/* Help Service Section */}
-        <section className="p-4 md:p-10">
+        <section className="p-4 xl:py-10 xl:px-0">
           <h1 className="text-4xl font-bold mb-10">
             Service To Help You Shop!
           </h1>
@@ -187,7 +184,6 @@ function Home() {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 }
