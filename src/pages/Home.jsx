@@ -1,5 +1,6 @@
 import Slider from "../components/Slider";
 import DropdownButton from "../components/DropdownButton";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -21,9 +22,12 @@ function Home() {
         <section className="p-4 xl:py-10 xl:px-0">
           <h1 className="text-4xl font-bold mb-10">This For You!</h1>
           <div className="grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-2 gap-4">
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
+            <Link
+              to="/productpage"
+              className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl"
+            >
               test
-            </div>
+            </Link>
             <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
               test
             </div>
