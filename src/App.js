@@ -13,7 +13,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/productpage" element={<ProductPage />} />
+          <Route
+            path="/productPage/:productType/:productId"
+            element={<ProductPage />}
+          />
           <Route path="/listproduct" element={<ListProduct />} />
         </Routes>
         <Footer />

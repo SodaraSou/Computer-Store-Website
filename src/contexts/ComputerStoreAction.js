@@ -1,9 +1,29 @@
 import { db } from "../firebase.config";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  getDoc,
+  query,
+  where,
+  doc,
+} from "firebase/firestore";
 
 export const createAccount = () => {};
 export const getProfile = () => {};
-export const getProduct = () => {};
+export const getProduct = async (productType, productId) => {
+  try {
+    const docRef = doc(db, productType, productId);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+      return docSnap.data();
+    } else {
+      console.log("No such document!");
+    }
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const getAllProduct = async () => {
   try {
     const docRef = collection(db, "laptop");
@@ -11,7 +31,10 @@ export const getAllProduct = async () => {
     const docSnap = await getDocs(docRef);
     const listing = [];
     docSnap.forEach((doc) => {
-      listing.push(doc.data());
+      listing.push({
+        id: doc.id,
+        data: doc.data(),
+      });
     });
     return listing;
   } catch (error) {
