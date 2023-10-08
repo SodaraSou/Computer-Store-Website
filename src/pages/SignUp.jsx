@@ -63,7 +63,7 @@ function SignUp() {
                   className="rounded-full w-full h-[38px] px-4"
                 />
               </div>
-              <button className="w-full mt-6 bg-white p-2 rounded-2xl font-semibold hover:bg-sky-400 hover:duration-200">
+              <button className="w-full mt-6 bg-white p-2 rounded-full font-semibold hover:bg-sky-400 hover:duration-200">
                 Sign Up
               </button>
             </div>

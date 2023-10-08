@@ -1,4 +1,5 @@
 import FacebookSvg from "../assets/svg/facebook.svg";
+import GoogleSvg from "../assets/svg/google.svg";
 import AuthPageImg from "../assets/img/auth_img.png";
 import { Link } from "react-router-dom";
 
@@ -49,7 +50,7 @@ function Login() {
                 <Link to="/">
                   {" "}
                   <img
-                    src={FacebookSvg}
+                    src={GoogleSvg}
                     alt="Facebook Logo"
                     className="w-7 h-7"
                   />
