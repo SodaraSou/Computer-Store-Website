@@ -1,4 +1,5 @@
 import FacebookSvg from "../assets/svg/facebook.svg";
+import AuthPageImg from "../assets/img/auth_img.png";
 import { Link } from "react-router-dom";
 
 function Login() {
@@ -6,8 +7,8 @@ function Login() {
     <div className="max-w-7xl mx-auto">
       <section className="p-4 xl:py-10 xl:px-0">
         <div className="max-w-[1000px] flex justify-center h-auto bg-[#D9D9D9] rounded-2xl my-10 mx-auto">
-          <div className="hidden w-full md:w-1/2  md:flex items-center justify-center">
-            {/* <img src="./manComputer.png" width={308} height={330} alt="" /> */}
+          <div className="hidden w-full md:w-1/2 md:flex items-center justify-center p-10">
+            <img src={AuthPageImg} alt="AuthPageImg" />
           </div>
           <div className="w-full md:w-1/2 p-10">
             <h1 className="text-4xl font-bold mb-10">Login</h1>

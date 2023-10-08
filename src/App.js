@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import ProductPage from "./pages/ProductPage";
 import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
 import { ComputerStoreProvider } from "./contexts/ComputerStoreContext";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/productpage" element={<ProductPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
         <Footer />
       </Router>
