@@ -1,5 +1,65 @@
-export const createAccount = () => {};
-export const getProfile = () => {};
+import { auth, dbFirestore } from "../firebase.config";
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
+// Create Account Method
+export const createAccount = async (inputData) => {
+  const { email, password } = inputData;
+  try {
+    const userCredential = await createUserWithEmailAndPassword(
+      auth,
+      email,
+      password
+    );
+    const user = userCredential.user;
+    await setDoc(doc(dbFirestore, "users", user.uid), inputData);
+    return true;
+  } catch (error) {
+    console.log(error);
+    toast.error("Something Went Wrong With Registration");
+  }
+};
+// Login Method
+export const userLogin = async (inputData) => {
+  const { email, password } = inputData;
+  try {
+    await signInWithEmailAndPassword(auth, email, password);
+    return true;
+  } catch (error) {
+    console.log(error);
+    toast.error("Bad User Credential");
+  }
+};
+// Logout Method
+export const userLogout = () => {
+  try {
+    signOut(auth);
+    return true;
+  } catch (error) {
+    console.log(error);
+  }
+};
+// Get User Profile Method
+export const getProfile = async (userId) => {
+  console.log(userId);
+  try {
+    const docRef = doc(dbFirestore, "users", userId);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      return docSnap.data();
+    } else {
+      console.log("no");
+    }
+  } catch (error) {
+    console.log(error);
+    toast.error("Something Went Wrong!");
+  }
+};
 export const getProduct = () => {};
 export const getAllProduct = () => {};
 export const searchProduct = () => {};

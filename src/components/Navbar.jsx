@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import accountSvg from "../assets/svg/user-regular.svg";
 import cartSvg from "../assets/svg/cart-plus-solid.svg";
+import { auth } from "../firebase.config";
 // import searchSvg from "../assets/svg/magnifying-glass-solid.svg";
 
 function Navbar() {
@@ -8,9 +9,9 @@ function Navbar() {
     <nav>
       <div className="max-w-7xl mx-auto p-4 xl:px-0 xl:py-6 flex justify-between items-center">
         <div className="flex items-center">
-          <span className="mr-10">
-            <h1 className="text-4xl font-bold">Logo</h1>
-          </span>
+          <Link to="/" className="text-4xl font-bold mr-10">
+            Logo
+          </Link>
           <ul className="hidden md:flex gap-8 text-lg">
             <li>
               <Link>Categories</Link>
@@ -36,7 +37,7 @@ function Navbar() {
           </div>
           <ul className="flex gap-8">
             <li className="flex items-center">
-              <Link className="flex flex-row items-center gap-2">
+              <Link to="/profile" className="flex flex-row items-center gap-2">
                 <img src={accountSvg} alt="instagramSvg" className="svg-size" />
                 Account
               </Link>
