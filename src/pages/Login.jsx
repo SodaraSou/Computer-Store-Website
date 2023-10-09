@@ -64,11 +64,21 @@ function Login() {
                   />
                 </div>
                 <div className="flex justify-end mt-6">
-                  <Link to="/">Forgot Password?</Link>
+                  <Link to="/" className="underline hover:text-sky-400">
+                    Forgot Password?
+                  </Link>
                 </div>
                 <button className="w-full my-6 rounded-full bg-white p-2 font-semibold hover:bg-sky-400 hover:duration-200">
                   Login
                 </button>
+                <div className="mb-6 flex justify-center">
+                  <p>
+                    Don't Have Account?{" "}
+                    <Link to="/signup" className="underline hover:text-sky-400">
+                      SIGN UP
+                    </Link>
+                  </p>
+                </div>
                 <div className="relative flex items-center justify-center py-2">
                   <div className="h-[1px] bg-black flex-grow"></div>
                   <p className="absolute text-lg bg-[#D9D9D9] px-3">
