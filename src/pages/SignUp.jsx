@@ -55,7 +55,7 @@ function SignUp() {
                       placeholder="First Name"
                       id="firstName"
                       onChange={onChange}
-                      className="rounded-full w-full h-[38px] px-4"
+                      className="rounded-xl w-full h-[38px] px-4"
                     />
                   </div>
                   <div className="flex flex-col gap-2 w-full">
@@ -70,7 +70,7 @@ function SignUp() {
                       placeholder="Last Name"
                       id="lastName"
                       onChange={onChange}
-                      className="rounded-full w-full h-[38px] px-4"
+                      className="rounded-xl w-full h-[38px] px-4"
                     />
                   </div>
                 </div>
@@ -83,7 +83,7 @@ function SignUp() {
                     placeholder="example@gmail.com"
                     id="email"
                     onChange={onChange}
-                    className="rounded-full w-full h-[38px] px-4"
+                    className="rounded-xl w-full h-[38px] px-4"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
@@ -95,7 +95,7 @@ function SignUp() {
                     placeholder="*********"
                     id="password"
                     onChange={onChange}
-                    className="rounded-full w-full h-[38px] px-4"
+                    className="rounded-xl w-full h-[38px] px-4"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
@@ -107,10 +107,10 @@ function SignUp() {
                     placeholder="*********"
                     id="confirmPassword"
                     onChange={onChange}
-                    className="rounded-full w-full h-[38px] px-4"
+                    className="rounded-xl w-full h-[38px] px-4"
                   />
                 </div>
-                <button className="w-full my-6 bg-white p-2 rounded-full font-semibold hover:bg-sky-400 hover:duration-200">
+                <button className="w-full my-6 bg-white p-2 rounded-xl font-semibold hover:bg-sky-400 hover:duration-200">
                   Sign Up
                 </button>
                 <div className="mb-6 flex justify-center">
