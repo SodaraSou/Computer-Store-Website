@@ -43,7 +43,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="flex items-center">
-              <Link className="flex flex-row items-center gap-2">
+              <Link to="/cart" className="flex flex-row items-center gap-2">
                 <img src={cartSvg} alt="cartSvg" className="svg-size" />
                 Cart
               </Link>

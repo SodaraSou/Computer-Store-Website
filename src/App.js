@@ -8,6 +8,7 @@ import ProductPage from "./pages/ProductPage";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Cart from "./pages/Cart";
 import PrivateRoute from "./components/PrivateRoute";
 import { ComputerStoreProvider } from "./contexts/ComputerStoreContext";
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/productpage" element={<ProductPage />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
