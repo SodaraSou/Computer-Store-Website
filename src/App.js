@@ -8,6 +8,7 @@ import ProductPage from "./pages/ProductPage";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
+import Checkout from "./pages/Checkout";
 import PrivateRoute from "./components/PrivateRoute";
 import { ComputerStoreProvider } from "./contexts/ComputerStoreContext";
 
@@ -24,6 +25,7 @@ function App() {
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer />
       </Router>
