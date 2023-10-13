@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createAccount } from "../contexts/ComputerStoreAction";
 import AuthPageImg from "../assets/img/auth_img.png";
+import GoogleSvg from "../assets/svg/google.svg";
+import FacebookSvg from "../assets/svg/facebook.svg";
 
 function SignUp() {
   const [inputData, setInputData] = useState({
@@ -41,7 +43,7 @@ function SignUp() {
             <form onSubmit={onSubmit}>
               <div className="flex flex-col gap-2">
                 <div className="flex gap-2">
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor="firstName"
                       className="text-lg font-semibold"
@@ -53,10 +55,10 @@ function SignUp() {
                       placeholder="First Name"
                       id="firstName"
                       onChange={onChange}
-                      className="rounded-full w-full h-[38px] px-4"
+                      className="rounded-xl w-full h-[38px] px-4"
                     />
                   </div>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor="firstName"
                       className="text-lg font-semibold"
@@ -68,7 +70,7 @@ function SignUp() {
                       placeholder="Last Name"
                       id="lastName"
                       onChange={onChange}
-                      className="rounded-full w-full h-[38px] px-4"
+                      className="rounded-xl w-full h-[38px] px-4"
                     />
                   </div>
                 </div>
@@ -81,7 +83,7 @@ function SignUp() {
                     placeholder="example@gmail.com"
                     id="email"
                     onChange={onChange}
-                    className="rounded-full w-full h-[38px] px-4"
+                    className="rounded-xl w-full h-[38px] px-4"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
@@ -93,7 +95,7 @@ function SignUp() {
                     placeholder="*********"
                     id="password"
                     onChange={onChange}
-                    className="rounded-full w-full h-[38px] px-4"
+                    className="rounded-xl w-full h-[38px] px-4"
                   />
                 </div>
                 <div className="flex flex-col gap-2">
@@ -105,12 +107,43 @@ function SignUp() {
                     placeholder="*********"
                     id="confirmPassword"
                     onChange={onChange}
-                    className="rounded-full w-full h-[38px] px-4"
+                    className="rounded-xl w-full h-[38px] px-4"
                   />
                 </div>
-                <button className="w-full mt-6 bg-white p-2 rounded-full font-semibold hover:bg-sky-400 hover:duration-200">
+                <button className="w-full my-6 bg-white p-2 rounded-xl font-semibold hover:bg-sky-400 hover:duration-200">
                   Sign Up
                 </button>
+                <div className="mb-6 flex justify-center">
+                  <p>
+                    Already Have An Account?{" "}
+                    <Link to="/login" className="underline hover:text-sky-400">
+                      LOG IN
+                    </Link>
+                  </p>
+                </div>
+                <div className="relative flex items-center justify-center py-2">
+                  <div className="h-[1px] bg-black flex-grow"></div>
+                  <p className="absolute text-lg bg-[#D9D9D9] px-3">
+                    or sign in with
+                  </p>
+                </div>
+                <div className="flex justify-center mt-6 gap-10">
+                  <Link to="/">
+                    {" "}
+                    <img
+                      src={GoogleSvg}
+                      alt="Facebook Logo"
+                      className="w-7 h-7"
+                    />
+                  </Link>
+                  <Link to="/">
+                    <img
+                      src={FacebookSvg}
+                      alt="Google Logo"
+                      className="w-7 h-7"
+                    />
+                  </Link>
+                </div>
               </div>
             </form>
           </div>

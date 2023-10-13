@@ -4,6 +4,7 @@ import {
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
+  sendPasswordResetEmail
 } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
@@ -58,6 +59,15 @@ export const getProfile = async (userId) => {
   } catch (error) {
     console.log(error);
     toast.error("Something Went Wrong!");
+  }
+};
+export const resetPassword = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email)
+    toast.success('Successful Send')
+  } catch (error) {
+    console.log(error);
+    toast.error('Could not send password reset link')
   }
 };
 export const getProduct = () => {};
