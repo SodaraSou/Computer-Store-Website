@@ -29,13 +29,9 @@ function Login() {
   const navigate = useNavigate();
   const onSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const loginStatus = await userLogin(inputData);
-      if (loginStatus) {
-        navigate("/");
-      }
-    } catch (error) {
-      console.log(error);
+    const loginStatus = await userLogin(inputData);
+    if (loginStatus) {
+      navigate("/");
     }
   };
   return showForgetPassword ? (

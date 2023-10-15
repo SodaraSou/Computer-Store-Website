@@ -22,13 +22,9 @@ function SignUp() {
   const navigate = useNavigate();
   const onSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const createAccountStatus = await createAccount(inputData);
-      if (createAccountStatus) {
-        navigate("/profile");
-      }
-    } catch (error) {
-      console.log(error);
+    const createAccountStatus = await createAccount(inputData);
+    if (createAccountStatus) {
+      navigate("/profile");
     }
   };
   return (
