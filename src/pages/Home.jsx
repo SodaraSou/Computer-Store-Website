@@ -3,19 +3,26 @@ import DropdownButton from "../components/DropdownButton";
 import { Link } from "react-router-dom";
 
 function Home() {
+  const type = [
+    { id: 1, type: "Laptop" },
+    { id: 2, type: "PC Hardware" },
+    { id: 3, type: "Peripharals" },
+    { id: 4, type: "Accessories" },
+  ];
+  const price = [
+    { id: 1, type: "Highest Price" },
+    { id: 2, type: "Lowest Price" },
+  ];
   return (
     <>
       <div className="max-w-7xl mx-auto">
         <Slider />
         {/* Categories Section */}
         <section className="p-4 xl:py-10 xl:px-0 flex items-center justify-between">
-          <div className="flex gap-4">
-            <DropdownButton>Type</DropdownButton>
-            <DropdownButton>Price</DropdownButton>
-            <DropdownButton>Offer</DropdownButton>
-          </div>
-          <div>
-            <DropdownButton>Sort By</DropdownButton>
+          <div className="w-full flex justify-evenly md:justify-start md:gap-4">
+            <DropdownButton dropdownContent={type}>Type</DropdownButton>
+            <DropdownButton dropdownContent={price}>Price</DropdownButton>
+            <DropdownButton dropdownContent={price}>Offer</DropdownButton>
           </div>
         </section>
         {/* Main Product Grid Section */}
