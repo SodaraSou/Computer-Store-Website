@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import accountSvg from "../assets/svg/user-regular.svg";
 import cartSvg from "../assets/svg/cart-plus-solid.svg";
-import { auth } from "../firebase.config";
 // import searchSvg from "../assets/svg/magnifying-glass-solid.svg";
 
 function Navbar() {
