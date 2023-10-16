@@ -46,7 +46,7 @@ function Navbar() {
         <div className="block md:hidden">
           <input
             type="text"
-            className="w-full h-[38px] px-4 rounded-lg bg-[#D9D9D9] mr-10"
+            className="w-full h-[38px] px-4 rounded-lg bg-[#D9D9D9]"
             placeholder="Search Product"
           />
         </div>
