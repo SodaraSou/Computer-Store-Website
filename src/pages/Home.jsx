@@ -1,8 +1,20 @@
 import Slider from "../components/Slider";
 import DropdownButton from "../components/DropdownButton";
-import { Link } from "react-router-dom";
+import ProductCard from "../components/ProductCard";
 
 function Home() {
+  const test = [
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+    { id: 4 },
+    { id: 5 },
+    { id: 6 },
+    { id: 7 },
+    { id: 8 },
+    { id: 9 },
+    { id: 10 },
+  ];
   const type = [
     { id: 1, type: "Laptop" },
     { id: 2, type: "PC Hardware" },
@@ -28,34 +40,10 @@ function Home() {
         {/* Main Product Grid Section */}
         <section className="p-4 xl:py-10 xl:px-0">
           <h1 className="text-4xl font-bold mb-10">This For You!</h1>
-          <div className="grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-2 gap-4">
-            <Link
-              to="/productpage"
-              className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl"
-            >
-              test
-            </Link>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+            {test.map((card) => (
+              <ProductCard key={card.id} />
+            ))}
           </div>
         </section>
         {/* Top Categories Section */}
@@ -159,19 +147,10 @@ function Home() {
           <h1 className="text-4xl font-bold mb-10">
             Today Best Deals For You!
           </h1>
-          <div className="grid grid-cols-2 grid-rows-2 md:grid-cols-4 md:grid-rows-1 gap-4">
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
-            <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
-              test
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-4 gap-4">
+            {test.slice(0, 4).map((card) => (
+              <ProductCard key={card.id} />
+            ))}
           </div>
         </section>
         {/* Help Service Section */}
