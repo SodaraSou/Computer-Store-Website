@@ -88,7 +88,7 @@ function Cart() {
             <p className="text-lg font-semibold">$549.00</p>
             <p>Taxes and shipping not included</p>
             <Link
-              to="/"
+              to="/checkout"
               className="bg-[#D9D9D9] h-[38px] py-2 px-4 rounded-lg font-semibold"
             >
               Checkout
