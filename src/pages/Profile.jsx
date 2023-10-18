@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { userLogout, getProfile } from "../contexts/ComputerStoreAction";
 import { useEffect, useContext } from "react";
 import { auth } from "../firebase.config";
@@ -172,9 +172,12 @@ function Profile() {
                   <p>Order status: Complete</p>
                   <p>Delivery by: J&T</p>
                 </div>
-                <button className="h-10 w-32 rounded-full bg-[#D9D9D9] font-bold">
+                <Link
+                  to="/orderHistory"
+                  className="h-10 w-32 rounded-full bg-[#D9D9D9] font-bold"
+                >
                   Detail
-                </button>
+                </Link>
               </div>
               <div className="flex justify-between">
                 <div className="w-full">

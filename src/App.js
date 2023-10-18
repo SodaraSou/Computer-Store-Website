@@ -9,6 +9,7 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import PrivateRoute from "./components/PrivateRoute";
+import OrderHistoryDetial from "./pages/OrderHistoryDetial";
 import { ComputerStoreProvider } from "./contexts/ComputerStoreContext";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
           </Route>
+          <Route path="/orderHistory" element={<OrderHistoryDetial />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
         </Routes>
