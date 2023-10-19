@@ -83,7 +83,6 @@ function Profile() {
                       type="text"
                       placeholder=""
                       id="firstName"
-                      value={userProfile.firstName}
                       className="rounded-lg w-full h-[38px] px-4 border"
                     />
                   </div>

@@ -1,10 +1,11 @@
 import { auth, dbFirestore } from "../firebase.config";
 import {
   createUserWithEmailAndPassword,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
+  FacebookAuthProvider,
+  signInWithPopup,
 } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
@@ -68,6 +69,16 @@ export const resetPassword = async (email) => {
   } catch (error) {
     console.log(error);
     toast.error("Could not send password reset link");
+  }
+};
+export const faceBookAuth = async () => {
+  const fbAuthProvider = new FacebookAuthProvider();
+  try {
+   await signInWithPopup(auth, fbAuthProvider);
+  return true;
+  } catch (error) {
+    console.log(error);
+    toast.error('Error')
   }
 };
 export const getProduct = () => {};

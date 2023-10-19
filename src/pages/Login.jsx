@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { userLogin } from "../contexts/ComputerStoreAction";
+import { faceBookAuth, userLogin } from "../contexts/ComputerStoreAction";
 import FacebookSvg from "../assets/svg/facebook.svg";
 import GoogleSvg from "../assets/svg/google.svg";
 import AuthPageImg from "../assets/img/auth_img.png";
@@ -26,6 +26,12 @@ function Login() {
     e.preventDefault();
     resetPassword(resetEmail);
   };
+  async function facebookAuthButtonClicked(){
+    const user = await faceBookAuth();
+    if (user) {
+      navigate('/')
+    }
+  }
   const navigate = useNavigate();
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -76,7 +82,6 @@ function Login() {
           </div>
           <div className="w-full md:w-1/2 p-10">
             <h1 className="text-4xl font-bold mb-10">Login</h1>
-            <form onSubmit={onSubmit}>
               <div className="flex flex-col gap-2">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="firstName" className="text-lg font-semibold">
@@ -110,7 +115,7 @@ function Login() {
                     Forgot Password?
                   </button>
                 </div>
-                <button className="w-full my-6 rounded-xl bg-white p-2 font-semibold hover:bg-sky-400 hover:duration-200">
+                <button onClick={onSubmit} className="w-full my-6 rounded-xl bg-white p-2 font-semibold hover:bg-sky-400 hover:duration-200">
                   Login
                 </button>
                 <div className="mb-6 flex justify-center">
@@ -128,24 +133,23 @@ function Login() {
                   </p>
                 </div>
                 <div className="flex justify-center mt-6 gap-10">
-                  <Link to="/">
+                  <button >
                     {" "}
                     <img
                       src={GoogleSvg}
                       alt="Facebook Logo"
                       className="w-7 h-7"
                     />
-                  </Link>
-                  <Link to="/">
+                  </button>
+                  <button onClick={facebookAuthButtonClicked}>
                     <img
                       src={FacebookSvg}
                       alt="Google Logo"
                       className="w-7 h-7"
                     />
-                  </Link>
+                  </button>
                 </div>
               </div>
-            </form>
           </div>
         </div>
       </section>
