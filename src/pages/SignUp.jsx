@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { createAccount } from "../contexts/ComputerStoreAction";
 import AuthPageImg from "../assets/img/auth_img.png";
 import GoogleSvg from "../assets/svg/google.svg";
-import FacebookSvg from "../assets/svg/facebook.svg";
 
 function SignUp() {
   const [inputData, setInputData] = useState({
@@ -111,13 +110,6 @@ function SignUp() {
                     <img
                       src={GoogleSvg}
                       alt="Facebook Logo"
-                      className="w-7 h-7"
-                    />
-                  </Link>
-                  <Link to="/">
-                    <img
-                      src={FacebookSvg}
-                      alt="Google Logo"
                       className="w-7 h-7"
                     />
                   </Link>
