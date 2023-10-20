@@ -9,25 +9,13 @@ function ProductPage() {
     <div className="max-w-7xl mx-auto p-4 xl:py-10 xl:px-0">
       {/* Main Product Section */}
       <section className="flex flex-col md:flex-row gap-10 mb-10">
-        <div className="w-full md:w-1/2 bg-[#D9D9D9] rounded-3xl">Hello</div>
+        <div className="w-full md:w-1/2 h-[451px] md:h-[590px] bg-[#D9D9D9] rounded-3xl">
+          Hello
+        </div>
         <div className="w-full md:w-1/2">
           <h1 className="text-4xl font-bold mb-5">AirPods Max</h1>
-          <p className="text-lg mb-5">
-            a perfect balance of exhilarating high-quality audio and the
-            effortess magic of airpod
-          </p>
-          <div className="flex gap-2 mb-5">
-            <img src={StarSvg} alt="StarSvg" className="svg-size" />
-            <img src={StarSvg} alt="StarSvg" className="svg-size" />
-            <img src={StarSvg} alt="StarSvg" className="svg-size" />
-            <img src={StarSvg} alt="StarSvg" className="svg-size" />
-            <img src={StarSvg} alt="StarSvg" className="svg-size" />
-          </div>
           <hr className="mb-5" />
           <h1 className="text-4xl font-bold mb-5">$549.00</h1>
-          <p className="text-lg mb-5">
-            Suggest payments with 6 months special financing
-          </p>
           <hr className="mb-5" />
           <h2 className="text-2xl font-bold mb-5">Choose a Color</h2>
           <div className="flex gap-5 mb-5">
