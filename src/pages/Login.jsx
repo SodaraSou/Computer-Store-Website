@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { googleAuth, userLogin } from "../contexts/ComputerStoreAction";
 import { userLogin } from "../contexts/ComputerStoreAction";
 import GoogleSvg from "../assets/svg/google.svg";
 import AuthPageImg from "../assets/img/auth_img.png";
@@ -25,6 +26,12 @@ function Login() {
     e.preventDefault();
     resetPassword(resetEmail);
   };
+  async function googleAuthButtonClicked(){
+    const user = await googleAuth();
+    if (user) {
+      navigate('/')
+    }
+  }
   const navigate = useNavigate();
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -126,7 +133,7 @@ function Login() {
                   </p>
                 </div>
                 <div className="flex justify-center mt-6 gap-10">
-                  <button >
+                  <button onClick={googleAuthButtonClicked}>
                     {" "}
                     <img
                       src={GoogleSvg}

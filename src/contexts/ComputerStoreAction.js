@@ -4,6 +4,8 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
+  signInWithPopup,
+  GoogleAuthProvider,
 } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
@@ -67,6 +69,17 @@ export const resetPassword = async (email) => {
   } catch (error) {
     console.log(error);
     toast.error("Could not send password reset link");
+  }
+};
+// Google Authentication Provider
+export const googleAuth = async () => {
+  const googleAuthProvider = new GoogleAuthProvider();
+  try {
+    await signInWithPopup(auth, googleAuthProvider);
+  return true;
+  } catch (error) {
+    console.log(error);
+    toast.error('Error')
   }
 };
 export const getProduct = () => {};
