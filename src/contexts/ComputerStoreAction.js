@@ -6,6 +6,7 @@ import {
   sendPasswordResetEmail,
   FacebookAuthProvider,
   signInWithPopup,
+  GoogleAuthProvider,
 } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
@@ -75,6 +76,17 @@ export const faceBookAuth = async () => {
   const fbAuthProvider = new FacebookAuthProvider();
   try {
    await signInWithPopup(auth, fbAuthProvider);
+  return true;
+  } catch (error) {
+    console.log(error);
+    toast.error('Error')
+  }
+};
+// Google Authentication Provider
+export const googleAuth = async () => {
+  const googleAuthProvider = new GoogleAuthProvider();
+  try {
+    await signInWithPopup(auth, googleAuthProvider);
   return true;
   } catch (error) {
     console.log(error);

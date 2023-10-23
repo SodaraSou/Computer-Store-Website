@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { faceBookAuth, userLogin } from "../contexts/ComputerStoreAction";
+import { faceBookAuth, googleAuth, userLogin } from "../contexts/ComputerStoreAction";
 import FacebookSvg from "../assets/svg/facebook.svg";
 import GoogleSvg from "../assets/svg/google.svg";
 import AuthPageImg from "../assets/img/auth_img.png";
@@ -32,6 +32,13 @@ function Login() {
       navigate('/')
     }
   }
+  async function googleAuthButtonClicked(){
+    const user = await googleAuth();
+    if (user) {
+      navigate('/')
+    }
+  }
+
   const navigate = useNavigate();
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -133,7 +140,7 @@ function Login() {
                   </p>
                 </div>
                 <div className="flex justify-center mt-6 gap-10">
-                  <button >
+                  <button onClick={googleAuthButtonClicked}>
                     {" "}
                     <img
                       src={GoogleSvg}
