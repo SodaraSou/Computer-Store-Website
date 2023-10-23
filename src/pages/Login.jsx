@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { googleAuth, userLogin } from "../contexts/ComputerStoreAction";
-import { userLogin } from "../contexts/ComputerStoreAction";
 import GoogleSvg from "../assets/svg/google.svg";
 import AuthPageImg from "../assets/img/auth_img.png";
 import { resetPassword } from "../contexts/ComputerStoreAction";
@@ -26,10 +25,10 @@ function Login() {
     e.preventDefault();
     resetPassword(resetEmail);
   };
-  async function googleAuthButtonClicked(){
+  async function googleAuthButtonClicked() {
     const user = await googleAuth();
     if (user) {
-      navigate('/')
+      navigate("/");
     }
   }
   const navigate = useNavigate();
@@ -82,67 +81,70 @@ function Login() {
           </div>
           <div className="w-full md:w-1/2 p-10">
             <h1 className="text-4xl font-bold mb-10">Login</h1>
+            <div className="flex flex-col gap-2">
               <div className="flex flex-col gap-2">
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="firstName" className="text-lg font-semibold">
-                    Email
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="example@gmail.com"
-                    id="email"
-                    onChange={onChange}
-                    className="rounded-xl w-full h-[38px] px-4"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="firstName" className="text-lg font-semibold">
-                    Password
-                  </label>
-                  <input
-                    type="password"
-                    placeholder="*********"
-                    id="password"
-                    onChange={onChange}
-                    className="rounded-xl w-full h-[38px] px-4"
-                  />
-                </div>
-                <div className="flex justify-end mt-6">
-                  <button
-                    onClick={() => setShowForgetPassword(true)}
-                    className="underline hover:text-sky-400"
-                  >
-                    Forgot Password?
-                  </button>
-                </div>
-                <button onClick={onSubmit} className="w-full my-6 rounded-xl bg-white p-2 font-semibold hover:bg-sky-400 hover:duration-200">
-                  Login
-                </button>
-                <div className="mb-6 flex justify-center">
-                  <p>
-                    Don't Have Account?{" "}
-                    <Link to="/signup" className="underline hover:text-sky-400">
-                      SIGN UP
-                    </Link>
-                  </p>
-                </div>
-                <div className="relative flex items-center justify-center py-2">
-                  <div className="h-[1px] bg-black flex-grow"></div>
-                  <p className="absolute text-lg bg-[#D9D9D9] px-3">
-                    or sign in with
-                  </p>
-                </div>
-                <div className="flex justify-center mt-6 gap-10">
-                  <button onClick={googleAuthButtonClicked}>
-                    {" "}
-                    <img
-                      src={GoogleSvg}
-                      alt="Facebook Logo"
-                      className="w-7 h-7"
-                    />
-                  </button>
-                </div>
+                <label htmlFor="firstName" className="text-lg font-semibold">
+                  Email
+                </label>
+                <input
+                  type="text"
+                  placeholder="example@gmail.com"
+                  id="email"
+                  onChange={onChange}
+                  className="rounded-xl w-full h-[38px] px-4"
+                />
               </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="firstName" className="text-lg font-semibold">
+                  Password
+                </label>
+                <input
+                  type="password"
+                  placeholder="*********"
+                  id="password"
+                  onChange={onChange}
+                  className="rounded-xl w-full h-[38px] px-4"
+                />
+              </div>
+              <div className="flex justify-end mt-6">
+                <button
+                  onClick={() => setShowForgetPassword(true)}
+                  className="underline hover:text-sky-400"
+                >
+                  Forgot Password?
+                </button>
+              </div>
+              <button
+                onClick={onSubmit}
+                className="w-full my-6 rounded-xl bg-white p-2 font-semibold hover:bg-sky-400 hover:duration-200"
+              >
+                Login
+              </button>
+              <div className="mb-6 flex justify-center">
+                <p>
+                  Don't Have Account?{" "}
+                  <Link to="/signup" className="underline hover:text-sky-400">
+                    SIGN UP
+                  </Link>
+                </p>
+              </div>
+              <div className="relative flex items-center justify-center py-2">
+                <div className="h-[1px] bg-black flex-grow"></div>
+                <p className="absolute text-lg bg-[#D9D9D9] px-3">
+                  or sign in with
+                </p>
+              </div>
+              <div className="flex justify-center mt-6 gap-10">
+                <button onClick={googleAuthButtonClicked}>
+                  {" "}
+                  <img
+                    src={GoogleSvg}
+                    alt="Facebook Logo"
+                    className="w-7 h-7"
+                  />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
