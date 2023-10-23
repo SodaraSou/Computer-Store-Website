@@ -4,7 +4,6 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
-  FacebookAuthProvider,
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
@@ -70,16 +69,6 @@ export const resetPassword = async (email) => {
   } catch (error) {
     console.log(error);
     toast.error("Could not send password reset link");
-  }
-};
-export const faceBookAuth = async () => {
-  const fbAuthProvider = new FacebookAuthProvider();
-  try {
-   await signInWithPopup(auth, fbAuthProvider);
-  return true;
-  } catch (error) {
-    console.log(error);
-    toast.error('Error')
   }
 };
 // Google Authentication Provider

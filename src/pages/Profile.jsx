@@ -71,36 +71,20 @@ function Profile() {
                 </button>
               </div>
               <div className="w-full flex flex-col gap-4">
-                <div className="flex gap-2">
-                  <div className="w-full flex flex-col gap-2">
+              <div className="w-full flex flex-col gap-2">
                     <label
-                      htmlFor="firstName"
+                      htmlFor="username"
                       className="text-md md:text-lg font-semibold"
                     >
-                      First Name
+                      Username
                     </label>
                     <input
                       type="text"
                       placeholder=""
-                      id="firstName"
+                      id="username"
                       className="rounded-lg w-full h-[38px] px-4 border"
                     />
                   </div>
-                  <div className="w-full flex flex-col gap-2">
-                    <label
-                      htmlFor="lastName"
-                      className="text-md md:text-lg font-semibold"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder=""
-                      id="lastName"
-                      className="rounded-lg w-full h-[38px] px-4 border"
-                    />
-                  </div>
-                </div>
                 <div className="w-full flex flex-col gap-2">
                   <label
                     htmlFor="email"

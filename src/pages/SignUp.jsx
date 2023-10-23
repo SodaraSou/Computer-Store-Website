@@ -3,12 +3,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { createAccount } from "../contexts/ComputerStoreAction";
 import AuthPageImg from "../assets/img/auth_img.png";
 import GoogleSvg from "../assets/svg/google.svg";
-import FacebookSvg from "../assets/svg/facebook.svg";
 
 function SignUp() {
   const [inputData, setInputData] = useState({
-    firstName: "",
-    lastName: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -38,38 +36,21 @@ function SignUp() {
             <h1 className="text-4xl font-bold mb-10">Sign Up</h1>
             <form onSubmit={onSubmit}>
               <div className="flex flex-col gap-2">
-                <div className="flex gap-2">
-                  <div className="flex flex-col gap-2 w-full">
+              <div className="flex flex-col gap-2 w-full">
                     <label
                       htmlFor="firstName"
                       className="text-lg font-semibold"
                     >
-                      First name
+                      Username
                     </label>
                     <input
                       type="text"
-                      placeholder="First Name"
-                      id="firstName"
+                      placeholder="Username"
+                      id="username"
                       onChange={onChange}
                       className="rounded-xl w-full h-[38px] px-4"
                     />
                   </div>
-                  <div className="flex flex-col gap-2 w-full">
-                    <label
-                      htmlFor="firstName"
-                      className="text-lg font-semibold"
-                    >
-                      Last Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Last Name"
-                      id="lastName"
-                      onChange={onChange}
-                      className="rounded-xl w-full h-[38px] px-4"
-                    />
-                  </div>
-                </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="firstName" className="text-lg font-semibold">
                     Email
@@ -129,13 +110,6 @@ function SignUp() {
                     <img
                       src={GoogleSvg}
                       alt="Facebook Logo"
-                      className="w-7 h-7"
-                    />
-                  </Link>
-                  <Link to="/">
-                    <img
-                      src={FacebookSvg}
-                      alt="Google Logo"
                       className="w-7 h-7"
                     />
                   </Link>
