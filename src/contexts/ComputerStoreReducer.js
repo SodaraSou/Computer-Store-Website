@@ -1,6 +1,6 @@
 const ComputerStoreReducer = (state, action) => {
   switch (action.type) {
-    case "SET_LOADING":
+    case "SET_LOADING_TRUE":
       return {
         ...state,
         loading: true,
@@ -14,6 +14,7 @@ const ComputerStoreReducer = (state, action) => {
       return {
         ...state,
         product: action.payload,
+        loading: false,
       };
     case "GET_ALL_PRODUCT":
       return {

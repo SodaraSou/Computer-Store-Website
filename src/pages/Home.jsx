@@ -1,6 +1,9 @@
 import Slider from "../components/Slider";
 import DropdownButton from "../components/DropdownButton";
-import { Link } from "react-router-dom";
+import ProductList from "../components/ProductList";
+import { useContext, useEffect } from "react";
+import ComputerStoreContext from "../contexts/ComputerStoreContext";
+import { getAllProduct } from "../contexts/ComputerStoreAction";
 
 function Home() {
   const type = [
@@ -13,6 +16,17 @@ function Home() {
     { id: 1, type: "Highest Price" },
     { id: 2, type: "Lowest Price" },
   ];
+  const { listProducts, dispatch } = useContext(ComputerStoreContext);
+  useEffect(() => {
+    const fetchAllProduct = async () => {
+      const data = await getAllProduct();
+      dispatch({ type: "GET_ALL_PRODUCT", payload: data });
+      if (data) {
+        console.log(data);
+      }
+    };
+    fetchAllProduct();
+  }, []);
   return (
     <>
       <div className="max-w-7xl mx-auto">
@@ -28,8 +42,8 @@ function Home() {
         {/* Main Product Grid Section */}
         <section className="p-4 xl:py-10 xl:px-0">
           <h1 className="text-4xl font-bold mb-10">This For You!</h1>
-          <div className="grid grid-cols-2 grid-rows-4 md:grid-cols-4 md:grid-rows-2 gap-4">
-            <Link
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* <Link
               to="/productpage"
               className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl"
             >
@@ -55,7 +69,8 @@ function Home() {
             </div>
             <div className="w-full h-[300px] md:h-[400px] bg-[#D9D9D9] rounded-2xl">
               test
-            </div>
+            </div> */}
+            <ProductList listProducts={listProducts} />
           </div>
         </section>
         {/* Top Categories Section */}

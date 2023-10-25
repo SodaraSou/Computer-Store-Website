@@ -5,7 +5,7 @@ import {
   signOut,
   sendPasswordResetEmail,
 } from "firebase/auth";
-import { doc, getDoc, setDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, setDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 // Create Account Method
 export const createAccount = async (inputData) => {
@@ -69,8 +69,31 @@ export const resetPassword = async (email) => {
     toast.error("Could not send password reset link");
   }
 };
-export const getProduct = () => {};
-export const getAllProduct = () => {};
+export const getProduct = async (productType, productId) => {
+  try {
+    const docRef = doc(dbFirestore, productType, productId);
+    const docSnap = await getDoc(docRef);
+    return docSnap.data();
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const getAllProduct = async () => {
+  try {
+    const docRef = collection(dbFirestore, "laptop");
+    const docSnap = await getDocs(docRef);
+    const list = [];
+    docSnap.forEach((doc) => {
+      list.push({
+        id: doc.id,
+        data: doc.data(),
+      });
+    });
+    return list;
+  } catch (error) {
+    console.log(error);
+  }
+};
 export const searchProduct = () => {};
 export const getByBrand = () => {};
 export const getByCategory = () => {};

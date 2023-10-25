@@ -1,10 +1,25 @@
-import { useState } from "react";
-import StarSvg from "../assets/svg/star-solid.svg";
+import { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
 import PlusSvg from "../assets/svg/plus-solid.svg";
 import MinusSvg from "../assets/svg/minus-solid.svg";
+import { getProduct } from "../contexts/ComputerStoreAction";
+import ComputerStoreContext from "../contexts/ComputerStoreContext";
 
 function ProductPage() {
   const [amount, setAmount] = useState(1);
+  const { productType, productId } = useParams();
+  const { product, dispatch, loading } = useContext(ComputerStoreContext);
+  useEffect(() => {
+    const fetchProduct = async () => {
+      dispatch({ type: "SET_LOADING_TRUE" });
+      const data = await getProduct(productType, productId);
+      dispatch({ type: "GET_PRODUCT", payload: data });
+    };
+    fetchProduct();
+  }, []);
+  if (loading) {
+    return <p>Loading</p>;
+  }
   return (
     <div className="max-w-7xl mx-auto p-4 xl:py-10 xl:px-0">
       {/* Main Product Section */}
@@ -13,7 +28,7 @@ function ProductPage() {
           Hello
         </div>
         <div className="w-full md:w-1/2">
-          <h1 className="text-4xl font-bold mb-5">AirPods Max</h1>
+          <h1 className="text-4xl font-bold mb-5">{product.model}</h1>
           <hr className="mb-5" />
           <h1 className="text-4xl font-bold mb-5">$549.00</h1>
           <hr className="mb-5" />

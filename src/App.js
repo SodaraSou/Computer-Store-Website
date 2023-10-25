@@ -20,7 +20,10 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/productpage" element={<ProductPage />} />
+          <Route
+            path="/productpage/:productType/:productId"
+            element={<ProductPage />}
+          />
           <Route path="/cart" element={<Cart />} />
           <Route path="/profile" element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
